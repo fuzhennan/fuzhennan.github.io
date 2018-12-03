@@ -79,21 +79,25 @@
 
 
 
-<meta name="description" content="#关于Java的值传递机制 ##引言最近学的知识杂而乱，每天看着《Thinking in java》，可以把基础打的更扎实，同时也看着尚硅谷的Java视频教程，双管齐下。这是我第一次在简书上写东西，记录自己学到的东西，我觉得很好。今天在课上，实在过于无聊，便在牛客app上刷Java基础题，有一道题吸引了我的注意！直接贴图!">
+<meta name="description" content="#Java程序初始化顺序 ##引言今天在课上复习了Java的初始化顺序，一直有点疑惑，搞不明白，所以打算写下来，记录一下。 ##重点先说一下Java程序初始化的顺序:父类静态变量&amp;gt;父类静态代码块&amp;gt;子类静态变量&amp;gt;子类静态代码块&amp;gt;父类非静态变量&amp;gt;父类非静态代码块&amp;gt;父类构造器&amp;gt;子类非静态变量&amp;gt;子类非静态代码块&amp;gt;子类构造器。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java值传递">
-<meta property="og:url" content="http://yoursite.com/2018/12/03/Java值传递/index.html">
+<meta property="og:title" content="Java程序初始化顺序">
+<meta property="og:url" content="http://yoursite.com/2018/12/03/Java程序初始化顺序/index.html">
 <meta property="og:site_name" content="fuzhennan&#39;s blog">
-<meta property="og:description" content="#关于Java的值传递机制 ##引言最近学的知识杂而乱，每天看着《Thinking in java》，可以把基础打的更扎实，同时也看着尚硅谷的Java视频教程，双管齐下。这是我第一次在简书上写东西，记录自己学到的东西，我觉得很好。今天在课上，实在过于无聊，便在牛客app上刷Java基础题，有一道题吸引了我的注意！直接贴图!">
+<meta property="og:description" content="#Java程序初始化顺序 ##引言今天在课上复习了Java的初始化顺序，一直有点疑惑，搞不明白，所以打算写下来，记录一下。 ##重点先说一下Java程序初始化的顺序:父类静态变量&amp;gt;父类静态代码块&amp;gt;子类静态变量&amp;gt;子类静态代码块&amp;gt;父类非静态变量&amp;gt;父类非静态代码块&amp;gt;父类构造器&amp;gt;子类非静态变量&amp;gt;子类非静态代码块&amp;gt;子类构造器。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12947566-4a7789bb620fee5f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12947566-1df288a3a764da08.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12947566-2b1218dd2c85bb81.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000">
-<meta property="og:updated_time" content="2018-12-03T12:23:46.674Z">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12947566-4b05f426b97a8c13.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/639">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12947566-8e586ec9fd1d7456.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/588">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12947566-98eb7b4f19a8cb89.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/494">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12947566-d7211b62df2f2cff.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/567">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12947566-cff63c2d6c447b53.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/595">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12947566-c50676277565667b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/792">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12947566-4ed8cc306aaee009.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/644">
+<meta property="og:updated_time" content="2018-12-03T12:23:27.904Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java值传递">
-<meta name="twitter:description" content="#关于Java的值传递机制 ##引言最近学的知识杂而乱，每天看着《Thinking in java》，可以把基础打的更扎实，同时也看着尚硅谷的Java视频教程，双管齐下。这是我第一次在简书上写东西，记录自己学到的东西，我觉得很好。今天在课上，实在过于无聊，便在牛客app上刷Java基础题，有一道题吸引了我的注意！直接贴图!">
-<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/12947566-4a7789bb620fee5f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000">
+<meta name="twitter:title" content="Java程序初始化顺序">
+<meta name="twitter:description" content="#Java程序初始化顺序 ##引言今天在课上复习了Java的初始化顺序，一直有点疑惑，搞不明白，所以打算写下来，记录一下。 ##重点先说一下Java程序初始化的顺序:父类静态变量&amp;gt;父类静态代码块&amp;gt;子类静态变量&amp;gt;子类静态代码块&amp;gt;父类非静态变量&amp;gt;父类非静态代码块&amp;gt;父类构造器&amp;gt;子类非静态变量&amp;gt;子类非静态代码块&amp;gt;子类构造器。">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/12947566-4b05f426b97a8c13.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/639">
 
 
 
@@ -123,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/12/03/Java值传递/">
+  <link rel="canonical" href="http://yoursite.com/2018/12/03/Java程序初始化顺序/">
 
 
 
 
 
-  <title>Java值传递 | fuzhennan's blog</title>
+  <title>Java程序初始化顺序 | fuzhennan's blog</title>
   
 
 
@@ -236,7 +240,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/03/Java值传递/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/03/Java程序初始化顺序/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="fzn">
@@ -253,7 +257,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Java值传递</h1>
+          <h1 class="post-title" itemprop="name headline">Java程序初始化顺序</h1>
         
 
         <div class="post-meta">
@@ -265,7 +269,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-03T19:35:05+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-03T20:02:57+08:00">
                 2018-12-03
               </time>
             
@@ -297,7 +301,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  440
+                  1.2k
                 </span>
               
 
@@ -313,7 +317,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  4
                 </span>
               
             </div>
@@ -334,9 +338,25 @@
       
 
       
-        <p>#关于Java的值传递机制</p>
-<p>##引言<br>最近学的知识杂而乱，每天看着《Thinking in java》，可以把基础打的更扎实，同时也看着尚硅谷的Java视频教程，双管齐下。这是我第一次在简书上写东西，记录自己学到的东西，我觉得很好。今天在课上，实在过于无聊，便在牛客app上刷Java基础题，有一道题吸引了我的注意！直接贴图!<a id="more"></a><a href="https://i.imgur.com/07kDdp7.png" target="_blank" rel="noopener"></a><img src="https://upload-images.jianshu.io/upload_images/12947566-4a7789bb620fee5f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000" alt=""><br>这是一道来自于阿里巴巴的面试题，考察的知识点在于Java的值传递与引用传递机制。大家仔细阅读一下代码，可能有人会选择B，包括我刚开始也毫不犹豫的选择了第二个选项，还在纸上画了内存图。<img src="https://upload-images.jianshu.io/upload_images/12947566-1df288a3a764da08.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000" alt=""><br>这道题不是说有多难，可是我还是做错了，而且前几天看视频时讲Java的值传递机制就是用这道题当例题讲解的，我得好好反思自己了。当second()方法执行完时，里面的局部变量应该释放了，被jvm的垃圾收集器回收了，所以再回到first()方法里，输出的v.i的v应该是first()方法区中的v对象，它指向的i还是等于20，所以最后的结果为15,0,20。如果大家还有不明白的，直接看牛客这道题评论区里大神画的内存图吧！<br><img src="https://upload-images.jianshu.io/upload_images/12947566-2b1218dd2c85bb81.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000" alt=""></p>
-<p>##总结<br>遇到复杂问题不要想当然的认为是啥，一定要在纸上画出内存图，方便自己理解，或者是一个一个的敲到IDE里去，然后打断点调试一下，使自己理解的更加透彻，好了，今天的笔记就到这了！</p>
+        <p>#Java程序初始化顺序</p>
+<p>##引言<br>今天在课上复习了Java的初始化顺序，一直有点疑惑，搞不明白，所以打算写下来，记录一下。</p>
+<p>##重点<br>先说一下Java程序初始化的顺序:父类静态变量&gt;父类静态代码块&gt;子类静态变量&gt;子类静态代码块&gt;父类非静态变量&gt;父类非静态代码块&gt;父类构造器&gt;子类非静态变量&gt;子类非静态代码块&gt;子类构造器。<a id="more"></a></p>
+<p>##Java程序初始化一般遵循3个原则<br>1.静态对象（变量）先于非静态对象（变量）初始化。其中静态对象（变量）只初始化一次，因为static在jvm中只有一块区域存储，方法区（Method Area），他之所以被称为静态是因为从程序创建到死亡他的地址值都不会改变，他只在class类对象初次加载时初始化，因此static只需要初始化一次，而非静态对象（变量）可能会初始化很多次。</p>
+<p>2.如果类之间存在继承关系，那么父类优先于子类进行初始化。</p>
+<p>3.按照成员变量的定义顺序进行初始化。即使变量定义散布于方法之中，他们依然在任何方法（包括构造函数）被调用前先初始化。</p>
+<p>接下来我们先来看来《Thinking in Java 》的代码示例：<img src="https://upload-images.jianshu.io/upload_images/12947566-4b05f426b97a8c13.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/639" alt=""><img src="https://upload-images.jianshu.io/upload_images/12947566-8e586ec9fd1d7456.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/588" alt=""></p>
+<p>在Card中，Tag对象的实例化故意到处散布，in order to 使得他们都在构造器进入或者发生其它任何事情之前得到初始化。除此之外，t3在构造器内部得到了重新的初始化。</p>
+<p>下面我们来看看运行结果：<img src="https://upload-images.jianshu.io/upload_images/12947566-98eb7b4f19a8cb89.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/494" alt=""></p>
+<p>如果想在定义的同时进行初始化，采取的方法与非静态值表面看起来是相同的。但由于static值只有一个存储区域，所以无论创建了多少个对象，都必然会遇到何时对那个存储区域进行初始化的问题。下面来看一段《Thinking in Java 》代码：<img src="https://upload-images.jianshu.io/upload_images/12947566-d7211b62df2f2cff.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/567" alt=""><img src="https://upload-images.jianshu.io/upload_images/12947566-cff63c2d6c447b53.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/595" alt=""><br>注意在static定义之前，Cupboard已经实例化了一个非静态的b3.</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/12947566-c50676277565667b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/792" alt=""></p>
+<p>大家拿出纸笔来算算会输出个什么个结果吗，你的思路是否还清晰呢，还是像笔者一样已经云里雾里了，好了不卖关子了，我们来看看输出的结果：<img src="https://upload-images.jianshu.io/upload_images/12947566-4ed8cc306aaee009.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/644" alt=""></p>
+<p>是否和你在纸上的答案一样呢？</p>
+<p>##分析<br>我们来剖析一下这个程序，首先看main方法，main方法里首先会初始化静态对象t2,t3，在jvm的方法区里创建一个t2的静态对象，指向Table类，然后在创建一个t3的静态对象指向Cupboard.</p>
+<p>然后程序继续运行到Table类里，初始化静态对象b1，跳转到Bowl类，执行Bowl的构造器，打印输出Bowl（1），进入bowl类，初始化静态对象b2，跳转到Bowl类，执行Bowl的构造器，打印输出Bowl（2），回到Table类，执行Table类的构造器，打印输出Table（），执行b2.f（1），打印输出f（1），此时，静态对象t2的任务已经完成了。</p>
+<p>接下来时t3的任务，进入Cupboard类，初始化静态对象b4，跳转到Bowl类，打印输出Bowl（4），初始化静态对象b5，跳转到Bowl类，打印输出Bowl(5),初始化非静态对象b3，跳转到Bowl类，打印输出Bowl(3),然后执行Cupboard的构造器，打印输出Cupboard（），next，执行b4.f（2），打印输出f（2），此时静态对象t3的任务已经完成了。</p>
+<p>回到main函数里，执行非静态变量，打印输出一个Creating new Cupboard() in main，在new一个Cupboard，又回到了之前说的，静态对象b4，跳转到Bowl类，打印输出Bowl（4），静态对象b5，跳转到Bowl类，打印输出Bowl(5),初始化非静态对象b3，跳转到Bowl类，打印输出Bowl(3),然后执行Cupboard的构造器，打印输出Cupboard（），next，执行b4.f（2），打印输出f（2），然后继续打印一个Creating new Cupboard() in main，继续new一个Cupboard，又回到了之前说的，静态对象b4，跳转到Bowl类，打印输出Bowl（4），静态对象b5，跳转到Bowl类，打印输出Bowl(5),初始化非静态对象b3，跳转到Bowl类，打印输出Bowl(3),然后执行Cupboard的构造器，打印输出Cupboard（），next，执行b4.f（2），打印输出f（2）。</p>
+<p>最后执行t2.f2（1），t2指向的是Table类，所以打印输出f2（1），同理，t3.f3（3）打印输出f3（3）.</p>
+<p>##总结<br>到此为止，这段代码已经被我们解剖的清清楚楚了，所以对Java的初始化顺序应该印象更深了吧！今天的笔记就到此为止！</p>
 
       
     </div>
@@ -361,15 +381,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/12/03/Java值传递/" rel="next" title="Java值传递">
+                <i class="fa fa-chevron-left"></i> Java值传递
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/12/03/Java程序初始化顺序/" rel="prev" title="Java程序初始化顺序">
-                Java程序初始化顺序 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
