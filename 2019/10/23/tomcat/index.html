@@ -87,7 +87,14 @@
 <meta property="og:description" content="Tomcat学习笔记tomcat介绍 Tomcat是Apache 软件基金会（Apache Software Foundation）的Jakarta 项目中的一个核心项目，由Apache、Sun 和其他一些公司及个人共同开发而成。  Tomcat 服务器是一个免费的开放源代码的Web 应用服务器，属于轻量级应用服务器，在中小型系统和并发访问用户">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://raw.githubusercontent.com/fuzhennan/hexo_image/master/web01.jpg">
-<meta property="og:updated_time" content="2019-10-23T15:00:40.003Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/fuzhennan/hexo_image/master/tomcat_projerct01.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/fuzhennan/hexo_image/master/tomcat_source01.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/fuzhennan/hexo_image/master/tomcat_source02.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/fuzhennan/hexo_image/master/tomcat_source03.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/fuzhennan/hexo_image/master/tomcat_source04.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/fuzhennan/hexo_image/master/tomcat_source05.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/fuzhennan/hexo_image/master/tomcat_source06.png">
+<meta property="og:updated_time" content="2019-10-23T15:32:25.919Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="tomcat学习笔记">
 <meta name="twitter:description" content="Tomcat学习笔记tomcat介绍 Tomcat是Apache 软件基金会（Apache Software Foundation）的Jakarta 项目中的一个核心项目，由Apache、Sun 和其他一些公司及个人共同开发而成。  Tomcat 服务器是一个免费的开放源代码的Web 应用服务器，属于轻量级应用服务器，在中小型系统和并发访问用户">
@@ -311,7 +318,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  9
+                  8
                 </span>
               
             </div>
@@ -379,19 +386,123 @@
 <ul>
 <li><p>如果java环境变量没有正确配置，则可能出现闪退情况，请按要求正确配置java环境变量即可</p>
 </li>
-<li><p>如与控制台中文乱码情况，9版本以下的在tomcat中conf里面的server.xml，在Connector中加上  </p>
+<li><p>如遇控制台中文乱码情况，9版本以下的在tomcat中conf里面的server.xml，在Connector中加上  </p>
 </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br></pre></td><td class="code"><pre><span class="line">还是不行的在tomcat的bin目录下的catalina.bat加如下一条语句</span><br><span class="line"></span><br><span class="line">``` </span><br><span class="line">   set JAVA_OPTS=-Xms512m -Xmx1024m -XX:MaxPermSize=1024m -Dfile.encoding=UTF-8  </span><br><span class="line"> ```   </span><br><span class="line"></span><br><span class="line"> + 通过浏览器访问http://localhost:8080，若访问成功，则表明tomcat启动成功。</span><br><span class="line">## 项目结构</span><br><span class="line">![我是图片](https://raw.githubusercontent.com/fuzhennan/hexo_image/master/tomcat_projerct01.png)</span><br><span class="line"></span><br><span class="line"> + 项目文件所在目录直接放项目资源文件</span><br><span class="line"> + WEB-INF</span><br><span class="line">   - classes中放servlet编译好的字节码文件</span><br><span class="line">   - lib放中放使用的jar包</span><br><span class="line">   - web.xml是配置文件，定义请求url和所访问的内容与Servlet间的映射关系，可以指定欢迎页面等</span><br><span class="line"></span><br><span class="line">## 实战手工创建和打包第一个web工程</span><br><span class="line"> + 首先准备好自己的web工程，我这里使用的是之前写的代码，[传送门](https://github.com/fuzhennan/JavaWeb/tree/master/JS/bilibiliDemo01)</span><br><span class="line"> </span><br><span class="line"> + 然后将整个项目文件放在webapps目录下</span><br><span class="line"> </span><br><span class="line"> + 启动tomcat服务器，通过浏览器正常访问</span><br><span class="line"> </span><br><span class="line"> + 将webapps中项目删除，控制台中进入项目目录</span><br><span class="line"> </span><br><span class="line"> + 输入命令</span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">``` </span><br><span class="line">jar -cvf d:\xxx\xxx.war .</span><br><span class="line"></span><br><span class="line">```  </span><br><span class="line"> cvg是命令参数，表示生成一个文档、显示生成过程、指定生成的文件名，xxx为打包后要存放的路径和打包后的文件名，根据自己需求修改，注意，最后需输入一个空格在加一个&apos;.&apos;，代表打包该目录下所有文件。</span><br><span class="line"></span><br><span class="line">## 解读tomcat核心源码</span><br><span class="line"></span><br><span class="line">+ Tomcat的核心配置</span><br><span class="line"></span><br><span class="line">  - tomcat的核心配置都在conf\server.xml文件中，其核心结构示意图如下图所示：    </span><br><span class="line">  ![我是图片](https://raw.githubusercontent.com/fuzhennan/hexo_image/master/tomcat_source01.png)  </span><br><span class="line"></span><br><span class="line">  - 一个server服务器可以有多个service服务，每个服务都是由engine引擎提供的，每个引擎中可以多台主机或者虚拟主机，如localhost和virtual host，localhost中又可以包含多个context应用，engine引擎通过connector连接器使得浏览器可以访问服务器。</span><br><span class="line">      </span><br><span class="line">+ Service.xml内容的解读</span><br><span class="line"></span><br><span class="line">   - 源码图  </span><br><span class="line">   ![我是图片](https://raw.githubusercontent.com/fuzhennan/hexo_image/master/tomcat_source02.png)  </span><br><span class="line"></span><br><span class="line">   - 从源码图的代码结构中正好印证了上图的tomcat核心结构图，这里只有一个service服务，name为Catalina，</span><br><span class="line">   </span><br><span class="line">   - 有两个connector，第一个端口为8080，协议是HTTP/1.1，20000ms的延迟，重定向端口为8443，uri编码为utf-8，所以这也就是为什么是开头所说的通过浏览器访问http://localhost:8080的原因了，所以当8080端口被占用时，可以在此修改端口（注意，当应用上线时，必须将端口号 改为80，因为浏览器发出的HTTP请求的默认端口为80端口）；第二个connector较为简单，就不分析了。</span><br><span class="line">   </span><br><span class="line">   - 同时，这个server服务器里有一个engine引擎，name为Catalina，默认端口就是localhost。</span><br><span class="line">   </span><br><span class="line">   - 接下来是非常重要的地方，请看下图，我们看到engine里面有一个host主机，name为localhost，appBase为webapps，看到这里我想大家也就明白了为什么之前要把项目文件放在webapps中了，再往下看，unpackWARs为true，这个属性的意思是自动解压war包，autoDeploy为true代表着当开启tomcat服务器项目就会自动部署上线，所以在这里可以根据实际生产需求去改变它。  </span><br><span class="line">   ![我是图片](https://raw.githubusercontent.com/fuzhennan/hexo_image/master/tomcat_source03.png)  </span><br><span class="line">## 创建虚拟目录</span><br><span class="line">### 方法一：配置service.xml文件</span><br><span class="line">+  根据tomcat核心结构图，我们知道，只需要在host主机中添加一个context应用，指定他的path和docBase即可。  </span><br><span class="line"></span><br><span class="line">```&lt;Context path=&quot;/xxx&quot;, docBase=&quot;x:/xx/xx&quot;/&gt;</span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line">   - path：当前主机域名访问该应用的uri</span><br><span class="line">   </span><br><span class="line">   - docBase：当前应用目录所在的真实路径</span><br><span class="line">+ 弊端:若采用修改service.xml方法创建虚拟目录，则每次修改都要重新启动tomcat服务器，对正在运行的项目会造成不可估量的影响。</span><br><span class="line"></span><br><span class="line">### 方法二： 在localhost中添加配置</span><br><span class="line">+ 每当我们启动tomcat时，他会默认的在我们的conf目录下生成一个名为Catalina的引擎，里面有名为localhost的主机，我们只需要在localhost中添加相关配置文件即可。  </span><br><span class="line">   ![我是图片](https://raw.githubusercontent.com/fuzhennan/hexo_image/master/tomcat_source04.png)  </span><br><span class="line"></span><br><span class="line">  ![我是图片](https://raw.githubusercontent.com/fuzhennan/hexo_image/master/tomcat_source05.png)  </span><br><span class="line">  </span><br><span class="line"> -  需要注意的是， 添加的配置文件名字即为path，所以不需要再额外指定path路径，只需要指定docBase即可。最后只需要在浏览器中输入http://localhost:8080/xxx即可访问。  </span><br><span class="line"></span><br><span class="line">```&lt;Context path=&quot;/xxx&quot;, docBase=&quot;x:/xx/xx&quot;/&gt;  </span><br><span class="line">```       </span><br><span class="line"></span><br><span class="line">+ 使用该方法的优点是他会自动部署用户配置的文件，不需要重启tomcat服务器。  </span><br><span class="line"></span><br><span class="line">## 创建虚拟主机</span><br><span class="line">  </span><br><span class="line">### 域名解析服务DNS  </span><br><span class="line">+ DNS,Domain Name Service,域名解析服务，就是将域名与ip进行映射的服务，而提供这种服务的服务器叫做DNS服务器。 </span><br><span class="line"></span><br><span class="line">+  之所以我们能通过域名localhost访问本机，是因为windows本身也可以作为DNS服务器，我们能通过http://localhost:8080/访问本机，正是因为在C:\Windows\System32\drivers\etc目录下的hosts文件中配置了域名和ip地址，请看:</span><br><span class="line">  </span><br><span class="line">```  </span><br><span class="line">    localhost name resolution is handled within DNS itself.</span><br><span class="line">	127.0.0.1       localhost</span><br><span class="line">	::1             localhost</span><br><span class="line">```        </span><br><span class="line"></span><br><span class="line">### 虚拟主机的创建</span><br><span class="line"></span><br><span class="line">+ 所以，创建虚拟主机，我们只需要在service.xml配置文件engine里面新增加一个host主机即可。</span><br></pre></td></tr></table></figure>
-<p> <engine name="Catalina" defaulthost="localhost"><br>   &lt;Host name=”virtualHost”  appBase=”newWebapps”</engine></p>
-<pre><code>unpackWARs=&quot;true&quot; autoDeploy=&quot;true&quot;&gt;
-</code></pre><p>   <br> ……<br> </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">  </span><br><span class="line">  - name:代表当前主机的域名，这里我们将它取为virtualHost，</span><br><span class="line">  </span><br><span class="line">  - appBase：代表该域名下的应用存放在哪个目录，这里我指定为newWebapps</span><br><span class="line">  </span><br><span class="line">+ 修改完service.xml配置文件后，重启tomcat服务器   </span><br><span class="line"> </span><br><span class="line">+ 修改本地主机hosts文件后如下图（注意不要在前面加#）：  </span><br><span class="line">![我是图片](https://raw.githubusercontent.com/fuzhennan/hexo_image/master/tomcat_source06.png)  </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">+ 在浏览器中输入http://virtualHost:8080/xxx  (xxx为你的项目文件，放在newWebapps中)  </span><br><span class="line"></span><br><span class="line">+ 浏览器会先对本机上hosts文件进行DNS解析，如果没有找到，则去网络服务商（联通、电信）公司提供的DNS服务器上寻找该域名，如果还没有找到则会去更高级的DNS服务器上寻找，直到找到该域名为止；如果找不到，则浏览器会提示“域名解析错误“</span><br><span class="line"></span><br><span class="line">+ 思考，此时hosts文件中ip：127.0.0.1映射多个域名，当我们在浏览器中输入127.0.0.1：8080时，他会返回谁呢？ </span><br><span class="line">  - 其实这跟我们service.xml中的配置相关。</span><br><span class="line">  - 请看这句代码:</span><br></pre></td></tr></table></figure>
-<p><engine name="Catalina" defaulthost="localhost"><br><code>`</code>  </engine></p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">URIEncoding=&quot;UTF-8&quot;</span><br></pre></td></tr></table></figure>
+<p>还是不行的在tomcat的bin目录下的catalina.bat加如下一条语句</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set JAVA_OPTS=-Xms512m -Xmx1024m -XX:MaxPermSize=1024m -Dfile.encoding=UTF-8</span><br></pre></td></tr></table></figure>
 <ul>
-<li>很显然这里引擎指定了默认主机为localhost，所以当你输入127.0.0.1：8080时，浏览器会默认返回主机为localhost中的contex应用内容。</li>
+<li>通过浏览器访问<a href="http://localhost:8080，若访问成功，则表明tomcat启动成功。" target="_blank" rel="noopener">http://localhost:8080，若访问成功，则表明tomcat启动成功。</a></li>
+</ul>
+<h2 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h2><p><img src="https://raw.githubusercontent.com/fuzhennan/hexo_image/master/tomcat_projerct01.png" alt="我是图片"></p>
+<ul>
+<li>项目文件所在目录直接放项目资源文件</li>
+<li>WEB-INF<ul>
+<li>classes中放servlet编译好的字节码文件</li>
+<li>lib放中放使用的jar包</li>
+<li>web.xml是配置文件，定义请求url和所访问的内容与Servlet间的映射关系，可以指定欢迎页面等</li>
 </ul>
 </li>
+</ul>
+<h2 id="实战手工创建和打包第一个web工程"><a href="#实战手工创建和打包第一个web工程" class="headerlink" title="实战手工创建和打包第一个web工程"></a>实战手工创建和打包第一个web工程</h2><ul>
+<li><p>首先准备好自己的web工程，我这里使用的是之前写的代码，<a href="https://github.com/fuzhennan/JavaWeb/tree/master/JS/bilibiliDemo01" target="_blank" rel="noopener">传送门</a></p>
+</li>
+<li><p>然后将整个项目文件放在webapps目录下</p>
+</li>
+<li><p>启动tomcat服务器，通过浏览器正常访问</p>
+</li>
+<li><p>将webapps中项目删除，控制台中进入项目目录</p>
+</li>
+<li><p>输入命令</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jar -cvf d:\xxx\xxx.war .</span><br></pre></td></tr></table></figure>
+<ul>
+<li>cvg是命令参数，表示生成一个文档、显示生成过程、指定生成的文件名，xxx为打包后要存放的路径和打包后的文件名，根据自己需求修改，注意，最后需输入一个空格在加一个’.’，代表打包该目录下所有文件。</li>
+</ul>
+<h2 id="解读tomcat核心源码"><a href="#解读tomcat核心源码" class="headerlink" title="解读tomcat核心源码"></a>解读tomcat核心源码</h2><ul>
+<li><p>Tomcat的核心配置</p>
+<ul>
+<li><p>tomcat的核心配置都在conf\server.xml文件中，其核心结构示意图如下图所示：<br><img src="https://raw.githubusercontent.com/fuzhennan/hexo_image/master/tomcat_source01.png" alt="我是图片">  </p>
+</li>
+<li><p>一个server服务器可以有多个service服务，每个服务都是由engine引擎提供的，每个引擎中可以多台主机或者虚拟主机，如localhost和virtual host，localhost中又可以包含多个context应用，engine引擎通过connector连接器使得浏览器可以访问服务器。</p>
+</li>
+</ul>
+</li>
+<li><p>Service.xml内容的解读</p>
+<ul>
+<li><p>源码图<br><img src="https://raw.githubusercontent.com/fuzhennan/hexo_image/master/tomcat_source02.png" alt="我是图片">  </p>
+</li>
+<li><p>从源码图的代码结构中正好印证了上图的tomcat核心结构图，这里只有一个service服务，name为Catalina，</p>
+</li>
+<li><p>有两个connector，第一个端口为8080，协议是HTTP/1.1，20000ms的延迟，重定向端口为8443，uri编码为utf-8，所以这也就是为什么是开头所说的通过浏览器访问<a href="http://localhost:8080的原因了，所以当8080端口被占用时，可以在此修改端口（注意，当应用上线时，必须将端口号" target="_blank" rel="noopener">http://localhost:8080的原因了，所以当8080端口被占用时，可以在此修改端口（注意，当应用上线时，必须将端口号</a> 改为80，因为浏览器发出的HTTP请求的默认端口为80端口）；第二个connector较为简单，就不分析了。</p>
+</li>
+<li><p>同时，这个server服务器里有一个engine引擎，name为Catalina，默认端口就是localhost。</p>
+</li>
+<li><p>接下来是非常重要的地方，请看下图，我们看到engine里面有一个host主机，name为localhost，appBase为webapps，看到这里我想大家也就明白了为什么之前要把项目文件放在webapps中了，再往下看，unpackWARs为true，这个属性的意思是自动解压war包，autoDeploy为true代表着当开启tomcat服务器项目就会自动部署上线，所以在这里可以根据实际生产需求去改变它。<br><img src="https://raw.githubusercontent.com/fuzhennan/hexo_image/master/tomcat_source03.png" alt="我是图片">  </p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="创建虚拟目录"><a href="#创建虚拟目录" class="headerlink" title="创建虚拟目录"></a>创建虚拟目录</h2><h3 id="方法一：配置service-xml文件"><a href="#方法一：配置service-xml文件" class="headerlink" title="方法一：配置service.xml文件"></a>方法一：配置service.xml文件</h3><ul>
+<li>根据tomcat核心结构图，我们知道，只需要在host主机中添加一个context应用，指定他的path和docBase即可。  </li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;Context path=&quot;/xxx&quot;, docBase=&quot;x:/xx/xx&quot;/&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>path：当前主机域名访问该应用的uri</p>
+</li>
+<li><p>docBase：当前应用目录所在的真实路径</p>
+</li>
+<li>弊端:若采用修改service.xml方法创建虚拟目录，则每次修改都要重新启动tomcat服务器，对正在运行的项目会造成不可估量的影响。</li>
+</ul>
+<h3 id="方法二：-在localhost中添加配置"><a href="#方法二：-在localhost中添加配置" class="headerlink" title="方法二： 在localhost中添加配置"></a>方法二： 在localhost中添加配置</h3><ul>
+<li><p>每当我们启动tomcat时，他会默认的在我们的conf目录下生成一个名为Catalina的引擎，里面有名为localhost的主机，我们只需要在localhost中添加相关配置文件即可。<br> <img src="https://raw.githubusercontent.com/fuzhennan/hexo_image/master/tomcat_source04.png" alt="我是图片">  </p>
+<p><img src="https://raw.githubusercontent.com/fuzhennan/hexo_image/master/tomcat_source05.png" alt="我是图片">  </p>
+</li>
+<li><p>需要注意的是， 添加的配置文件名字即为path，所以不需要再额外指定path路径，只需要指定docBase即可。最后只需要在浏览器中输入<a href="http://localhost:8080/xxx即可访问。" target="_blank" rel="noopener">http://localhost:8080/xxx即可访问。</a>  </p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;Context, docBase=&quot;x:/xx/xx&quot;/&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>使用该方法的优点是他会自动部署用户配置的文件，不需要重启tomcat服务器。  </li>
+</ul>
+<h2 id="创建虚拟主机"><a href="#创建虚拟主机" class="headerlink" title="创建虚拟主机"></a>创建虚拟主机</h2><h3 id="域名解析服务DNS"><a href="#域名解析服务DNS" class="headerlink" title="域名解析服务DNS"></a>域名解析服务DNS</h3><ul>
+<li><p>DNS,Domain Name Service,域名解析服务，就是将域名与ip进行映射的服务，而提供这种服务的服务器叫做DNS服务器。 </p>
+</li>
+<li><p>之所以我们能通过域名localhost访问本机，是因为windows本身也可以作为DNS服务器，我们能通过<a href="http://localhost:8080/访问本机，正是因为在C:\Windows\System32\drivers\etc目录下的hosts文件中配置了域名和ip地址，请看" target="_blank" rel="noopener">http://localhost:8080/访问本机，正是因为在C:\Windows\System32\drivers\etc目录下的hosts文件中配置了域名和ip地址，请看</a>:</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#    localhost name resolution is handled within DNS 	itself.</span><br><span class="line">#	127.0.0.1       localhost</span><br><span class="line">#	::1             localhost</span><br></pre></td></tr></table></figure>
+<h3 id="虚拟主机的创建"><a href="#虚拟主机的创建" class="headerlink" title="虚拟主机的创建"></a>虚拟主机的创建</h3><ul>
+<li>所以，创建虚拟主机，我们只需要在service.xml配置文件engine里面新增加一个host主机即可。  </li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"> &lt;Engine name=&quot;Catalina&quot; defaultHost=&quot;localhost&quot;&gt;</span><br><span class="line">&lt;Host name=&quot;virtualHost&quot;  appBase=&quot;newWebapps&quot;</span><br><span class="line">         unpackWARs=&quot;true&quot; autoDeploy=&quot;true&quot;&gt;</span><br><span class="line">&lt;/Host&gt;</span><br><span class="line"> ......</span><br><span class="line"> &lt;/Engine&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>name:代表当前主机的域名，这里我们将它取为virtualHost，</p>
+</li>
+<li><p>appBase：代表该域名下的应用存放在哪个目录，这里我指定为newWebapps</p>
+</li>
+<li><p>修改完service.xml配置文件后，重启tomcat服务器   </p>
+</li>
+<li><p>修改本地主机hosts文件后如下图（注意不要在前面加#）：<br><img src="https://raw.githubusercontent.com/fuzhennan/hexo_image/master/tomcat_source06.png" alt="我是图片">  </p>
+</li>
+</ul>
+<ul>
+<li><p>在浏览器中输入<a href="http://virtualHost:8080/xxx" target="_blank" rel="noopener">http://virtualHost:8080/xxx</a>  (xxx为你的项目文件，放在newWebapps中)  </p>
+</li>
+<li><p>浏览器会先对本机上hosts文件进行DNS解析，如果没有找到，则去网络服务商（联通、电信）公司提供的DNS服务器上寻找该域名，如果还没有找到则会去更高级的DNS服务器上寻找，直到找到该域名为止；如果找不到，则浏览器会提示“域名解析错误“</p>
+</li>
+<li><p>思考，此时hosts文件中ip：127.0.0.1映射多个域名，当我们在浏览器中输入127.0.0.1：8080时，他会返回谁呢？ </p>
+</li>
+<li>其实这跟我们service.xml中的配置相关。</li>
+<li>请看这句代码:   </li>
+</ul>
+<pre><code>&lt;Engine name=&quot;Catalina&quot; defaultHost=&quot;localhost&quot;&gt;
+</code></pre><ul>
+<li>很显然这里引擎指定了默认主机为localhost，所以当你输入127.0.0.1：8080时，浏览器会默认返回主机为localhost中的contex应用内容。</li>
 </ul>
 <h2 id="相关文章"><a href="#相关文章" class="headerlink" title="相关文章"></a>相关文章</h2><ol>
 <li><a href="https://www.bilibili.com/video/av14548279" target="_blank" rel="noopener">bilibili某视频教程</a></li>
@@ -543,7 +654,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Tomcat学习笔记"><span class="nav-number">1.</span> <span class="nav-text">Tomcat学习笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#tomcat介绍"><span class="nav-number">1.1.</span> <span class="nav-text">tomcat介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Web基础"><span class="nav-number">1.2.</span> <span class="nav-text">Web基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#c-s与b-s架构"><span class="nav-number">1.2.1.</span> <span class="nav-text">c/s与b/s架构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#web中的三大协议四大角色"><span class="nav-number">1.2.2.</span> <span class="nav-text">web中的三大协议四大角色</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tomcat下载"><span class="nav-number">1.3.</span> <span class="nav-text">Tomcat下载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tomcat的运行环境与配置"><span class="nav-number">1.4.</span> <span class="nav-text">Tomcat的运行环境与配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tomcat的启动与访问"><span class="nav-number">1.5.</span> <span class="nav-text">Tomcat的启动与访问</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相关文章"><span class="nav-number">1.6.</span> <span class="nav-text">相关文章</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Tomcat学习笔记"><span class="nav-number">1.</span> <span class="nav-text">Tomcat学习笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#tomcat介绍"><span class="nav-number">1.1.</span> <span class="nav-text">tomcat介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Web基础"><span class="nav-number">1.2.</span> <span class="nav-text">Web基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#c-s与b-s架构"><span class="nav-number">1.2.1.</span> <span class="nav-text">c/s与b/s架构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#web中的三大协议四大角色"><span class="nav-number">1.2.2.</span> <span class="nav-text">web中的三大协议四大角色</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tomcat下载"><span class="nav-number">1.3.</span> <span class="nav-text">Tomcat下载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tomcat的运行环境与配置"><span class="nav-number">1.4.</span> <span class="nav-text">Tomcat的运行环境与配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tomcat的启动与访问"><span class="nav-number">1.5.</span> <span class="nav-text">Tomcat的启动与访问</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#项目结构"><span class="nav-number">1.6.</span> <span class="nav-text">项目结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实战手工创建和打包第一个web工程"><span class="nav-number">1.7.</span> <span class="nav-text">实战手工创建和打包第一个web工程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解读tomcat核心源码"><span class="nav-number">1.8.</span> <span class="nav-text">解读tomcat核心源码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建虚拟目录"><span class="nav-number">1.9.</span> <span class="nav-text">创建虚拟目录</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方法一：配置service-xml文件"><span class="nav-number">1.9.1.</span> <span class="nav-text">方法一：配置service.xml文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法二：-在localhost中添加配置"><span class="nav-number">1.9.2.</span> <span class="nav-text">方法二： 在localhost中添加配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建虚拟主机"><span class="nav-number">1.10.</span> <span class="nav-text">创建虚拟主机</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#域名解析服务DNS"><span class="nav-number">1.10.1.</span> <span class="nav-text">域名解析服务DNS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#虚拟主机的创建"><span class="nav-number">1.10.2.</span> <span class="nav-text">虚拟主机的创建</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相关文章"><span class="nav-number">1.11.</span> <span class="nav-text">相关文章</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -589,7 +700,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共4.7k字</span>
+  <span class="post-count">博客全站共4.6k字</span>
 </div>
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
