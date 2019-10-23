@@ -93,7 +93,7 @@
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12947566-cff63c2d6c447b53.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/595">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12947566-c50676277565667b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/792">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12947566-4ed8cc306aaee009.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/644">
-<meta property="og:updated_time" content="2018-12-10T08:15:57.515Z">
+<meta property="og:updated_time" content="2019-10-23T04:49:23.413Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java程序初始化顺序">
 <meta name="twitter:description" content="Java程序初始化顺序引言今天在课上复习了Java的初始化顺序，一直有点疑惑，搞不明白，所以打算写下来，记录一下。 重点先说一下Java程序初始化的顺序:">
@@ -301,7 +301,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.2k
+                  1.1k
                 </span>
               
 
@@ -353,7 +353,7 @@
 <h2 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h2><p>我们来剖析一下这个程序，首先看main方法，main方法里首先会初始化静态对象t2,t3，在jvm的方法区里创建一个t2的静态对象，指向Table类，然后在创建一个t3的静态对象指向Cupboard.</p>
 <p>然后程序继续运行到Table类里，初始化静态对象b1，跳转到Bowl类，执行Bowl的构造器，打印输出Bowl（1），进入bowl类，初始化静态对象b2，跳转到Bowl类，执行Bowl的构造器，打印输出Bowl（2），回到Table类，执行Table类的构造器，打印输出Table（），执行b2.f（1），打印输出f（1），此时，静态对象t2的任务已经完成了。</p>
 <p>接下来时t3的任务，进入Cupboard类，初始化静态对象b4，跳转到Bowl类，打印输出Bowl（4），初始化静态对象b5，跳转到Bowl类，打印输出Bowl(5),初始化非静态对象b3，跳转到Bowl类，打印输出Bowl(3),然后执行Cupboard的构造器，打印输出Cupboard（），next，执行b4.f（2），打印输出f（2），此时静态对象t3的任务已经完成了。</p>
-<p>回到main函数里，执行非静态变量，打印输出一个Creating new Cupboard() in main，在new一个Cupboard，又回到了之前说的，静态对象b4，跳转到Bowl类，打印输出Bowl（4），静态对象b5，跳转到Bowl类，打印输出Bowl(5),初始化非静态对象b3，跳转到Bowl类，打印输出Bowl(3),然后执行Cupboard的构造器，打印输出Cupboard（），next，执行b4.f（2），打印输出f（2），然后继续打印一个Creating new Cupboard() in main，继续new一个Cupboard，又回到了之前说的，静态对象b4，跳转到Bowl类，打印输出Bowl（4），静态对象b5，跳转到Bowl类，打印输出Bowl(5),初始化非静态对象b3，跳转到Bowl类，打印输出Bowl(3),然后执行Cupboard的构造器，打印输出Cupboard（），next，执行b4.f（2），打印输出f（2）。</p>
+<p>回到main函数里，执行非静态变量，打印输出一个Creating new Cupboard() in main，在new一个Cupboard，初始化非静态对象b3，跳转到Bowl类，打印输出Bowl(3),然后执行Cupboard的构造器，打印输出Cupboard（），next，执行b4.f（2），打印输出f（2），然后继续打印一个Creating new Cupboard() in main，<br>初始化非静态对象b3，跳转到Bowl类，打印输出Bowl(3),然后执行Cupboard的构造器，打印输出Cupboard（），next，执行b4.f（2），打印输出f（2）。</p>
 <p>最后执行t2.f2（1），t2指向的是Table类，所以打印输出f2（1），同理，t3.f3（3）打印输出f3（3）.</p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>到此为止，这段代码已经被我们解剖的清清楚楚了，所以对Java的初始化顺序应该印象更深了吧！今天的笔记就到此为止！</p>
 
@@ -469,7 +469,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -526,7 +526,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        ﻿<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        ﻿<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -552,7 +552,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共2k字</span>
+  <span class="post-count">博客全站共3.1k字</span>
 </div>
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
