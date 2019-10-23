@@ -88,13 +88,13 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://raw.githubusercontent.com/fuzhennan/hexo_image/master/web01.jpg">
 <meta property="og:image" content="https://raw.githubusercontent.com/fuzhennan/hexo_image/master/tomcat_projerct01.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/fuzhennan/hexo_image/master/tomcat_source01.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/fuzhennan/hexo_image/master/tomcat_source01.png.jpg">
 <meta property="og:image" content="https://raw.githubusercontent.com/fuzhennan/hexo_image/master/tomcat_source02.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/fuzhennan/hexo_image/master/tomcat_source03.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/fuzhennan/hexo_image/master/tomcat_source04.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/fuzhennan/hexo_image/master/tomcat_source05.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/fuzhennan/hexo_image/master/tomcat_source06.png">
-<meta property="og:updated_time" content="2019-10-23T15:32:25.919Z">
+<meta property="og:updated_time" content="2019-10-23T15:37:43.170Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="tomcat学习笔记">
 <meta name="twitter:description" content="Tomcat学习笔记tomcat介绍 Tomcat是Apache 软件基金会（Apache Software Foundation）的Jakarta 项目中的一个核心项目，由Apache、Sun 和其他一些公司及个人共同开发而成。  Tomcat 服务器是一个免费的开放源代码的Web 应用服务器，属于轻量级应用服务器，在中小型系统和并发访问用户">
@@ -426,7 +426,7 @@
 <h2 id="解读tomcat核心源码"><a href="#解读tomcat核心源码" class="headerlink" title="解读tomcat核心源码"></a>解读tomcat核心源码</h2><ul>
 <li><p>Tomcat的核心配置</p>
 <ul>
-<li><p>tomcat的核心配置都在conf\server.xml文件中，其核心结构示意图如下图所示：<br><img src="https://raw.githubusercontent.com/fuzhennan/hexo_image/master/tomcat_source01.png" alt="我是图片">  </p>
+<li><p>tomcat的核心配置都在conf\server.xml文件中，其核心结构示意图如下图所示：<br><img src="https://raw.githubusercontent.com/fuzhennan/hexo_image/master/tomcat_source01.png.jpg" alt="我是图片">  </p>
 </li>
 <li><p>一个server服务器可以有多个service服务，每个服务都是由engine引擎提供的，每个引擎中可以多台主机或者虚拟主机，如localhost和virtual host，localhost中又可以包含多个context应用，engine引擎通过connector连接器使得浏览器可以访问服务器。</p>
 </li>
