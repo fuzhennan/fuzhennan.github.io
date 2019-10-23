@@ -88,7 +88,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://raw.githubusercontent.com/fuzhennan/hexo_image/master/Java_init01_result.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/fuzhennan/hexo_image/master/Java_init02_result.png">
-<meta property="og:updated_time" content="2019-10-23T10:51:22.215Z">
+<meta property="og:updated_time" content="2019-10-23T11:01:43.980Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java程序初始化顺序">
 <meta name="twitter:description" content="Java程序初始化顺序引言今天在课上复习了Java的初始化顺序，一直有点疑惑，搞不明白，所以打算写下来，记录一下。 重点先说一下Java程序初始化的顺序:">
@@ -334,7 +334,7 @@
 
       
         <h1 id="Java程序初始化顺序"><a href="#Java程序初始化顺序" class="headerlink" title="Java程序初始化顺序"></a>Java程序初始化顺序</h1><h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>今天在课上复习了Java的初始化顺序，一直有点疑惑，搞不明白，所以打算写下来，记录一下。</p>
-<h2 id="重点"><a href="#重点" class="headerlink" title="重点"></a>重点</h2><p>先说一下Java程序初始化的顺序:<a id="more"></a>父类静态变量&gt;父类静态代码块&gt;子类静态变量&gt;子类静态代码块&gt;父类非静态变量&gt;父类非静态代码块&gt;父类构造器&gt;子类非静态变量&gt;子类非静态代码块&gt;子类构造器。</p>
+<h2 id="重点"><a href="#重点" class="headerlink" title="重点"></a>重点</h2><p>先说一下Java程序初始化的顺序:<br><a id="more"></a>父类静态变量&gt;父类静态代码块&gt;子类静态变量&gt;子类静态代码块&gt;父类非静态变量&gt;父类非静态代码块&gt;父类构造器&gt;子类非静态变量&gt;子类非静态代码块&gt;子类构造器。</p>
 <h2 id="Java程序初始化一般遵循3个原则"><a href="#Java程序初始化一般遵循3个原则" class="headerlink" title="Java程序初始化一般遵循3个原则"></a>Java程序初始化一般遵循3个原则</h2><ul>
 <li><p>1.静态对象（变量）先于非静态对象（变量）初始化。其中静态对象（变量）只初始化一次，因为static在jvm中只有一块区域存储，方法区（Method Area），他之所以被称为静态是因为从程序创建到死亡他的地址值都不会改变，他只在class类对象初次加载时初始化，因此static只需要初始化一次，而非静态对象（变量）可能会初始化很多次。</p>
 </li>
@@ -597,7 +597,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
