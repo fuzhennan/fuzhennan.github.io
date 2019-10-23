@@ -86,18 +86,13 @@
 <meta property="og:site_name" content="fuzhennan&#39;s blog">
 <meta property="og:description" content="Java程序初始化顺序引言今天在课上复习了Java的初始化顺序，一直有点疑惑，搞不明白，所以打算写下来，记录一下。 重点先说一下Java程序初始化的顺序:">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12947566-4b05f426b97a8c13.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/639">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12947566-8e586ec9fd1d7456.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/588">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12947566-98eb7b4f19a8cb89.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/494">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12947566-d7211b62df2f2cff.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/567">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12947566-cff63c2d6c447b53.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/595">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12947566-c50676277565667b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/792">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12947566-4ed8cc306aaee009.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/644">
-<meta property="og:updated_time" content="2019-10-23T04:49:23.413Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/fuzhennan/hexo_image/master/Java_init01_result.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/fuzhennan/hexo_image/master/Java_init02_result.png">
+<meta property="og:updated_time" content="2019-10-23T10:51:22.215Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java程序初始化顺序">
 <meta name="twitter:description" content="Java程序初始化顺序引言今天在课上复习了Java的初始化顺序，一直有点疑惑，搞不明白，所以打算写下来，记录一下。 重点先说一下Java程序初始化的顺序:">
-<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/12947566-4b05f426b97a8c13.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/639">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/fuzhennan/hexo_image/master/Java_init01_result.png">
 
 
 
@@ -301,7 +296,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.1k
+                  1.4k
                 </span>
               
 
@@ -317,7 +312,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4
+                  5
                 </span>
               
             </div>
@@ -340,22 +335,155 @@
       
         <h1 id="Java程序初始化顺序"><a href="#Java程序初始化顺序" class="headerlink" title="Java程序初始化顺序"></a>Java程序初始化顺序</h1><h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>今天在课上复习了Java的初始化顺序，一直有点疑惑，搞不明白，所以打算写下来，记录一下。</p>
 <h2 id="重点"><a href="#重点" class="headerlink" title="重点"></a>重点</h2><p>先说一下Java程序初始化的顺序:<a id="more"></a>父类静态变量&gt;父类静态代码块&gt;子类静态变量&gt;子类静态代码块&gt;父类非静态变量&gt;父类非静态代码块&gt;父类构造器&gt;子类非静态变量&gt;子类非静态代码块&gt;子类构造器。</p>
-<h2 id="Java程序初始化一般遵循3个原则"><a href="#Java程序初始化一般遵循3个原则" class="headerlink" title="Java程序初始化一般遵循3个原则"></a>Java程序初始化一般遵循3个原则</h2><p>1.静态对象（变量）先于非静态对象（变量）初始化。其中静态对象（变量）只初始化一次，因为static在jvm中只有一块区域存储，方法区（Method Area），他之所以被称为静态是因为从程序创建到死亡他的地址值都不会改变，他只在class类对象初次加载时初始化，因此static只需要初始化一次，而非静态对象（变量）可能会初始化很多次。</p>
-<p>2.如果类之间存在继承关系，那么父类优先于子类进行初始化。</p>
-<p>3.按照成员变量的定义顺序进行初始化。即使变量定义散布于方法之中，他们依然在任何方法（包括构造函数）被调用前先初始化。</p>
-<p>接下来我们先来看来《Thinking in Java 》的代码示例：<img src="https://upload-images.jianshu.io/upload_images/12947566-4b05f426b97a8c13.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/639" alt=""><img src="https://upload-images.jianshu.io/upload_images/12947566-8e586ec9fd1d7456.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/588" alt=""></p>
+<h2 id="Java程序初始化一般遵循3个原则"><a href="#Java程序初始化一般遵循3个原则" class="headerlink" title="Java程序初始化一般遵循3个原则"></a>Java程序初始化一般遵循3个原则</h2><ul>
+<li><p>1.静态对象（变量）先于非静态对象（变量）初始化。其中静态对象（变量）只初始化一次，因为static在jvm中只有一块区域存储，方法区（Method Area），他之所以被称为静态是因为从程序创建到死亡他的地址值都不会改变，他只在class类对象初次加载时初始化，因此static只需要初始化一次，而非静态对象（变量）可能会初始化很多次。</p>
+</li>
+<li><p>2.如果类之间存在继承关系，那么父类优先于子类进行初始化。</p>
+</li>
+<li><p>3.按照成员变量的定义顺序进行初始化。即使变量定义散布于方法之中，他们依然在任何方法（包括构造函数）被调用前先初始化。</p>
+</li>
+</ul>
+<p>接下来我们先来看来《Thinking in Java 》的代码示例：  </p>
+<pre><code class="Java">
+<span class="comment">/*</span>
+<span class="comment"> * copy from 《Thinking in Java》</span>
+<span class="comment"> */</span>
+<span class="class"><span class="keyword">class</span> <span class="title">Tag</span></span>{
+    Tag(<span class="keyword">int</span> marker){
+        System.out.println(<span class="string">"Tag("</span>+marker+<span class="string">")"</span>);
+    }
+}
+
+<span class="class"><span class="keyword">class</span> <span class="title">Card</span></span>{
+    Tag t1=<span class="keyword">new</span> Tag(<span class="number">1</span>);<span class="comment">//Before constructor</span>
+    Card(){
+        <span class="comment">//in the constructor</span>
+        System.out.println(<span class="string">"Card()"</span>);
+        t3=<span class="keyword">new</span> Tag(<span class="number">33</span>); <span class="comment">//Reinitialize t3</span>
+    }
+    Tag t2=<span class="keyword">new</span> Tag(<span class="number">2</span>);<span class="comment">//After constructor</span>
+    <span class="function"><span class="keyword">void</span> <span class="title">f</span><span class="params">()</span></span>{
+        System.out.println(<span class="string">"f()"</span>);
+    }
+    Tag t3=<span class="keyword">new</span> Tag(<span class="number">3</span>);<span class="comment">//at the end</span>
+}
+
+<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OrderOfInitialization</span></span>{
+    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>{
+        Card t=<span class="keyword">new</span> Card();
+        t.f();<span class="comment">//shows that construction is done</span>
+    }
+}
+
+</code></pre>
 <p>在Card中，Tag对象的实例化故意到处散布，in order to 使得他们都在构造器进入或者发生其它任何事情之前得到初始化。除此之外，t3在构造器内部得到了重新的初始化。</p>
-<p>下面我们来看看运行结果：<img src="https://upload-images.jianshu.io/upload_images/12947566-98eb7b4f19a8cb89.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/494" alt=""></p>
-<p>如果想在定义的同时进行初始化，采取的方法与非静态值表面看起来是相同的。但由于static值只有一个存储区域，所以无论创建了多少个对象，都必然会遇到何时对那个存储区域进行初始化的问题。下面来看一段《Thinking in Java 》代码：<img src="https://upload-images.jianshu.io/upload_images/12947566-d7211b62df2f2cff.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/567" alt=""><img src="https://upload-images.jianshu.io/upload_images/12947566-cff63c2d6c447b53.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/595" alt=""><br>注意在static定义之前，Cupboard已经实例化了一个非静态的b3.</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/12947566-c50676277565667b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/792" alt=""></p>
-<p>大家拿出纸笔来算算会输出个什么个结果吗，你的思路是否还清晰呢，还是像笔者一样已经云里雾里了，好了不卖关子了，我们来看看输出的结果：<img src="https://upload-images.jianshu.io/upload_images/12947566-4ed8cc306aaee009.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/644" alt=""></p>
+<p>下面我们来看看运行结果：<br><img src="https://raw.githubusercontent.com/fuzhennan/hexo_image/master/Java_init01_result.png" alt="我是图片"></p>
+<p>如果想在定义的同时进行初始化，采取的方法与非静态值表面看起来是相同的。但由于static值只有一个存储区域，所以无论创建了多少个对象，都必然会遇到何时对那个存储区域进行初始化的问题。下面来看一段《Thinking in Java 》代码:  </p>
+<pre><code class="Java">
+<span class="class"><span class="keyword">class</span> <span class="title">Bowl</span></span>{
+    Bowl(<span class="keyword">int</span> marker){
+        System.out.println(<span class="string">"Bowl("</span>+marker+<span class="string">")"</span>);
+    }
+    <span class="function"><span class="keyword">void</span> <span class="title">f</span><span class="params">(<span class="keyword">int</span> marker)</span></span>{
+        System.out.println(<span class="string">"f("</span>+marker+<span class="string">")"</span>);
+    }
+}
+
+<span class="class"><span class="keyword">class</span> <span class="title">Table</span></span>{
+    <span class="comment">//静态对象</span>
+    <span class="keyword">static</span> Bowl b1=<span class="keyword">new</span> Bowl(<span class="number">1</span>);
+    <span class="comment">//构造器</span>
+    Table(){
+        System.out.println(<span class="string">"Table()"</span>);
+        b2.f(<span class="number">1</span>);
+    }
+    <span class="comment">//方法</span>
+    <span class="function"><span class="keyword">void</span> <span class="title">f2</span><span class="params">(<span class="keyword">int</span> marker)</span></span>{
+        System.out.println(<span class="string">"f2("</span>+marker+<span class="string">")"</span>);
+    }
+    <span class="comment">//静态对象</span>
+    <span class="keyword">static</span> Bowl b2=<span class="keyword">new</span> Bowl(<span class="number">2</span>);
+}
+
+<span class="class"><span class="keyword">class</span> <span class="title">Cupboard</span></span>{
+    <span class="comment">//非静态对象</span>
+    Bowl b3=<span class="keyword">new</span> Bowl(<span class="number">3</span>);
+    <span class="comment">//静态对象</span>
+    <span class="keyword">static</span> Bowl b4=<span class="keyword">new</span> Bowl(<span class="number">4</span>);
+    <span class="comment">//构造器</span>
+    Cupboard(){
+        System.out.println(<span class="string">"Cupboard()"</span>);
+        b4.f(<span class="number">2</span>);
+    }
+    <span class="comment">//非静态方法</span>
+    <span class="function"><span class="keyword">void</span> <span class="title">f3</span><span class="params">(<span class="keyword">int</span> marker)</span></span>{
+        System.out.println(<span class="string">"f3("</span>+marker+<span class="string">")"</span>);
+    }
+    <span class="comment">//静态对象</span>
+    <span class="keyword">static</span> Bowl b5=<span class="keyword">new</span> Bowl(<span class="number">5</span>);
+}
+
+</code></pre>
+<p>注意在static定义之前，Cupboard已经实例化了一个非静态的b3.</p>
+<pre><code class="Java">
+<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StaticInitialization</span> </span>{
+    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>{
+        System.out.println(<span class="string">"Creating new Cupboard() in main"</span>);
+        <span class="keyword">new</span> Cupboard();
+        System.out.println(<span class="string">"Creating new Cupboard() in main"</span>);
+        <span class="keyword">new</span> Cupboard();
+        t2.f2(<span class="number">1</span>);
+        t3.f3(<span class="number">3</span>);
+    }
+    <span class="keyword">static</span> Table t2=<span class="keyword">new</span> Table();
+    <span class="keyword">static</span> Cupboard t3=<span class="keyword">new</span> Cupboard();
+}
+
+</code></pre>
+<p>大家拿出纸笔来算算会输出个什么个结果吗，你的思路是否还清晰呢，还是像笔者一样已经云里雾里了，好了不卖关子了，我们来看看输出的结果：<br><img src="https://raw.githubusercontent.com/fuzhennan/hexo_image/master/Java_init02_result.png" alt="我是图片"></p>
 <p>是否和你在纸上的答案一样呢？</p>
-<h2 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h2><p>我们来剖析一下这个程序，首先看main方法，main方法里首先会初始化静态对象t2,t3，在jvm的方法区里创建一个t2的静态对象，指向Table类，然后在创建一个t3的静态对象指向Cupboard.</p>
-<p>然后程序继续运行到Table类里，初始化静态对象b1，跳转到Bowl类，执行Bowl的构造器，打印输出Bowl（1），进入bowl类，初始化静态对象b2，跳转到Bowl类，执行Bowl的构造器，打印输出Bowl（2），回到Table类，执行Table类的构造器，打印输出Table（），执行b2.f（1），打印输出f（1），此时，静态对象t2的任务已经完成了。</p>
-<p>接下来时t3的任务，进入Cupboard类，初始化静态对象b4，跳转到Bowl类，打印输出Bowl（4），初始化静态对象b5，跳转到Bowl类，打印输出Bowl(5),初始化非静态对象b3，跳转到Bowl类，打印输出Bowl(3),然后执行Cupboard的构造器，打印输出Cupboard（），next，执行b4.f（2），打印输出f（2），此时静态对象t3的任务已经完成了。</p>
-<p>回到main函数里，执行非静态变量，打印输出一个Creating new Cupboard() in main，在new一个Cupboard，初始化非静态对象b3，跳转到Bowl类，打印输出Bowl(3),然后执行Cupboard的构造器，打印输出Cupboard（），next，执行b4.f（2），打印输出f（2），然后继续打印一个Creating new Cupboard() in main，<br>初始化非静态对象b3，跳转到Bowl类，打印输出Bowl(3),然后执行Cupboard的构造器，打印输出Cupboard（），next，执行b4.f（2），打印输出f（2）。</p>
-<p>最后执行t2.f2（1），t2指向的是Table类，所以打印输出f2（1），同理，t3.f3（3）打印输出f3（3）.</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>到此为止，这段代码已经被我们解剖的清清楚楚了，所以对Java的初始化顺序应该印象更深了吧！今天的笔记就到此为止！</p>
+<h2 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h2><p>我们来剖析一下这个程序：  </p>
+<ul>
+<li><p>首先看main方法，  </p>
+<ul>
+<li>main方法里首先会初始化静态对象t2,t3，</li>
+<li>在jvm的方法区里创建一个t2的静态对象，指向Table类，</li>
+<li>然后在创建一个t3的静态对象指向Cupboard.</li>
+</ul>
+</li>
+<li><p>然后程序继续运行到Table类里，</p>
+<ul>
+<li>初始化静态对象b1，跳转到Bowl类，执行Bowl的构造器，打印输出Bowl（1），</li>
+<li>进入bowl类，初始化静态对象b2，跳转到Bowl类，执行Bowl的构造器，打印输出Bowl（2），</li>
+<li>回到Table类，执行Table类的构造器，打印输出Table（），</li>
+<li>执行b2.f（1），打印输出f（1），此时，静态对象t2的任务已经完成了。</li>
+</ul>
+</li>
+<li><p>接下来是t3的任务，进入Cupboard类，</p>
+<ul>
+<li>初始化静态对象b4，跳转到Bowl类，打印输出Bowl（4），</li>
+<li>初始化静态对象b5，跳转到Bowl类，打印输出Bowl(5),</li>
+<li>初始化非静态对象b3，跳转到Bowl类，打印输出Bowl(3),</li>
+<li>然后执行Cupboard的构造器，打印输出Cupboard（），</li>
+<li>next，执行b4.f（2），打印输出f（2），此时静态对象t3的任务已经完成了。</li>
+</ul>
+</li>
+<li><p>回到main函数里，</p>
+<ul>
+<li>执行非静态变量，打印输出一个Creating new Cupboard() in main，</li>
+<li>在new一个Cupboard，初始化非静态对象b3，跳转到Bowl类，打印输出Bowl(3),</li>
+<li>然后执行Cupboard的构造器，打印输出Cupboard（），</li>
+<li>next，执行b4.f（2），打印输出f（2），</li>
+<li>然后继续打印一个Creating new Cupboard() in main，</li>
+<li>初始化非静态对象b3，跳转到Bowl类，打印输出Bowl(3),</li>
+<li>然后执行Cupboard的构造器，打印输出Cupboard（），</li>
+<li>next，执行b4.f（2），打印输出f（2）。</li>
+</ul>
+</li>
+<li><p>最后执行t2.f2（1），t2指向的是Table类，所以打印输出f2（1），同理，t3.f3（3）打印输出f3（3）.</p>
+</li>
+</ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>到此为止，这段代码已经被我们解剖的清清楚楚了，所以对Java的初始化顺序应该印象更深了吧！代码本身不难。但是有点绕口，有点复杂，只要自己敲一遍，理解一下，就能记住了。今天的笔记就到此为止！</p>
 
       
     </div>
@@ -552,7 +680,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共3k字</span>
+  <span class="post-count">博客全站共3.4k字</span>
 </div>
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 

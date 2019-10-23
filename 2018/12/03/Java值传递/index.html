@@ -79,21 +79,21 @@
 
 
 
-<meta name="description" content="关于Java的值传递机制引言最近学的知识杂而乱，每天看着《Thinking in java》，可以把基础打的更扎实，同时也看着尚硅谷的Java视频教程，双管齐下。这是我第一次在简书上写东西，记录自己学到的东西，我觉得很好。今天在课上，实在过于无聊，便在牛客app上刷Java基础题，有一道题吸引了我的注意！直接贴图!">
+<meta name="description" content="关于Java的值传递机制引言由于学的东西很多了，又没有及时地复习整理 ，所以最近觉得脑子里杂而乱，因此写下这篇文章。每天看着《Thinking in java》，可以把基础打的更扎实，同时也看着某网络教程的Java视频教程，双管齐下。这是我第一次在简书上写东西，记录自己学到的东西，我觉得很好。今天在课上，实在过于无聊，便在牛客app上刷Java基础题，有一道题吸引了我的注意！直接贴图!">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java值传递">
 <meta property="og:url" content="http://yoursite.com/2018/12/03/Java值传递/index.html">
 <meta property="og:site_name" content="fuzhennan&#39;s blog">
-<meta property="og:description" content="关于Java的值传递机制引言最近学的知识杂而乱，每天看着《Thinking in java》，可以把基础打的更扎实，同时也看着尚硅谷的Java视频教程，双管齐下。这是我第一次在简书上写东西，记录自己学到的东西，我觉得很好。今天在课上，实在过于无聊，便在牛客app上刷Java基础题，有一道题吸引了我的注意！直接贴图!">
+<meta property="og:description" content="关于Java的值传递机制引言由于学的东西很多了，又没有及时地复习整理 ，所以最近觉得脑子里杂而乱，因此写下这篇文章。每天看着《Thinking in java》，可以把基础打的更扎实，同时也看着某网络教程的Java视频教程，双管齐下。这是我第一次在简书上写东西，记录自己学到的东西，我觉得很好。今天在课上，实在过于无聊，便在牛客app上刷Java基础题，有一道题吸引了我的注意！直接贴图!">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12947566-4a7789bb620fee5f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12947566-1df288a3a764da08.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12947566-2b1218dd2c85bb81.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000">
-<meta property="og:updated_time" content="2018-12-10T08:16:10.038Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/fuzhennan/hexo_image/master/java_value_01.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/fuzhennan/hexo_image/master/java_value_02.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/fuzhennan/hexo_image/master/java_value_03.png">
+<meta property="og:updated_time" content="2019-10-23T10:58:17.985Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java值传递">
-<meta name="twitter:description" content="关于Java的值传递机制引言最近学的知识杂而乱，每天看着《Thinking in java》，可以把基础打的更扎实，同时也看着尚硅谷的Java视频教程，双管齐下。这是我第一次在简书上写东西，记录自己学到的东西，我觉得很好。今天在课上，实在过于无聊，便在牛客app上刷Java基础题，有一道题吸引了我的注意！直接贴图!">
-<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/12947566-4a7789bb620fee5f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000">
+<meta name="twitter:description" content="关于Java的值传递机制引言由于学的东西很多了，又没有及时地复习整理 ，所以最近觉得脑子里杂而乱，因此写下这篇文章。每天看着《Thinking in java》，可以把基础打的更扎实，同时也看着某网络教程的Java视频教程，双管齐下。这是我第一次在简书上写东西，记录自己学到的东西，我觉得很好。今天在课上，实在过于无聊，便在牛客app上刷Java基础题，有一道题吸引了我的注意！直接贴图!">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/fuzhennan/hexo_image/master/java_value_01.png">
 
 
 
@@ -297,7 +297,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  440
+                  472
                 </span>
               
 
@@ -334,7 +334,7 @@
       
 
       
-        <h1 id="关于Java的值传递机制"><a href="#关于Java的值传递机制" class="headerlink" title="关于Java的值传递机制"></a>关于Java的值传递机制</h1><h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>最近学的知识杂而乱，每天看着《Thinking in java》，可以把基础打的更扎实，同时也看着尚硅谷的Java视频教程，双管齐下。这是我第一次在简书上写东西，记录自己学到的东西，我觉得很好。今天在课上，实在过于无聊，便在牛客app上刷Java基础题，有一道题吸引了我的注意！直接贴图!<a id="more"></a><a href="https://i.imgur.com/07kDdp7.png" target="_blank" rel="noopener"></a><img src="https://upload-images.jianshu.io/upload_images/12947566-4a7789bb620fee5f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000" alt=""><br>这是一道来自于阿里巴巴的面试题，考察的知识点在于Java的值传递与引用传递机制。大家仔细阅读一下代码，可能有人会选择B，包括我刚开始也毫不犹豫的选择了第二个选项，还在纸上画了内存图。<img src="https://upload-images.jianshu.io/upload_images/12947566-1df288a3a764da08.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000" alt=""><br>这道题不是说有多难，可是我还是做错了，而且前几天看视频时讲Java的值传递机制就是用这道题当例题讲解的，我得好好反思自己了。当second()方法执行完时，里面的局部变量应该释放了，被jvm的垃圾收集器回收了，所以再回到first()方法里，输出的v.i的v应该是first()方法区中的v对象，它指向的i还是等于20，所以最后的结果为15,0,20。如果大家还有不明白的，直接看牛客这道题评论区里大神画的内存图吧！<br><img src="https://upload-images.jianshu.io/upload_images/12947566-2b1218dd2c85bb81.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000" alt=""></p>
+        <h1 id="关于Java的值传递机制"><a href="#关于Java的值传递机制" class="headerlink" title="关于Java的值传递机制"></a>关于Java的值传递机制</h1><h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>由于学的东西很多了，又没有及时地复习整理 ，所以最近觉得脑子里杂而乱，因此写下这篇文章。<br>每天看着《Thinking in java》，可以把基础打的更扎实，同时也看着某网络教程的Java视频教程，双管齐下。这是我第一次在简书上写东西，记录自己学到的东西，我觉得很好。今天在课上，实在过于无聊，便在牛客app上刷Java基础题，有一道题吸引了我的注意！直接贴图!<a id="more"></a><img src="https://raw.githubusercontent.com/fuzhennan/hexo_image/master/java_value_01.png" alt="我是图片"><br>这是一道来自于阿里巴巴的面试题，考察的知识点在于Java的值传递与引用传递机制。大家仔细阅读一下代码，可能有人会选择B，包括我刚开始也毫不犹豫的选择了第二个选项，还在纸上画了内存图。<img src="https://raw.githubusercontent.com/fuzhennan/hexo_image/master/java_value_02.png" alt="我是图片"><br>这道题不是说有多难，可是我还是做错了，而且前几天看视频时讲Java的值传递机制就是用这道题当例题讲解的，我得好好反思自己了。当second()方法执行完时，里面的局部变量应该释放了，被jvm的垃圾收集器回收了，所以再回到first()方法里，输出的v.i的v应该是first()方法区中的v对象，它指向的i还是等于20，所以最后的结果为15,0,20。如果大家还有不明白的，直接看牛客这道题评论区里大神画的内存图吧！<br><img src="https://raw.githubusercontent.com/fuzhennan/hexo_image/master/java_value_03.png" alt="我是图片"></p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>遇到复杂问题不要想当然的认为是啥，一定要在纸上画出内存图，方便自己理解，或者是一个一个的敲到IDE里去，然后打断点调试一下，使自己理解的更加透彻，好了，今天的笔记就到这了！</p>
 
       
@@ -528,7 +528,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共3k字</span>
+  <span class="post-count">博客全站共3.4k字</span>
 </div>
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
