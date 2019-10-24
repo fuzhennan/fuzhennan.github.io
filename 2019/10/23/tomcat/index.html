@@ -94,7 +94,10 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/fuzhennan/hexo_image/master/tomcat_source04.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/fuzhennan/hexo_image/master/tomcat_source05.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/fuzhennan/hexo_image/master/tomcat_source06.png">
-<meta property="og:updated_time" content="2019-10-23T15:37:43.170Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/fuzhennan/hexo_image/master/tomcat_managerApp_01.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/fuzhennan/hexo_image/master/tomcat_managerApp_02.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/fuzhennan/hexo_image/master/tomcat_managerApp_03.png">
+<meta property="og:updated_time" content="2019-10-24T07:06:50.600Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="tomcat学习笔记">
 <meta name="twitter:description" content="Tomcat学习笔记tomcat介绍 Tomcat是Apache 软件基金会（Apache Software Foundation）的Jakarta 项目中的一个核心项目，由Apache、Sun 和其他一些公司及个人共同开发而成。  Tomcat 服务器是一个免费的开放源代码的Web 应用服务器，属于轻量级应用服务器，在中小型系统和并发访问用户">
@@ -302,7 +305,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2.4k
+                  2.6k
                 </span>
               
 
@@ -318,7 +321,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  8
+                  9
                 </span>
               
             </div>
@@ -497,12 +500,37 @@
 </li>
 <li><p>思考，此时hosts文件中ip：127.0.0.1映射多个域名，当我们在浏览器中输入127.0.0.1：8080时，他会返回谁呢？ </p>
 </li>
-<li>其实这跟我们service.xml中的配置相关。</li>
-<li>请看这句代码:   </li>
+<li><p>其实这跟我们service.xml中的配置相关。</p>
+</li>
+<li><p>请看这句代码:   </p>
+</li>
 </ul>
-<pre><code>&lt;Engine name=&quot;Catalina&quot; defaultHost=&quot;localhost&quot;&gt;
-</code></pre><ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;Engine name=&quot;Catalina&quot; defaultHost=&quot;localhost&quot;&gt;</span><br></pre></td></tr></table></figure>
+<ul>
 <li>很显然这里引擎指定了默认主机为localhost，所以当你输入127.0.0.1：8080时，浏览器会默认返回主机为localhost中的contex应用内容。</li>
+</ul>
+<p>##ManagerApp</p>
+<ul>
+<li>当我们的项目非常多的时候，我们不可能一个一个的在浏览器地址栏输入项目名称去访问，这样会很麻烦，这时候就需要用到ManagerApp来把所有项目列出来了。<br><img src="https://raw.githubusercontent.com/fuzhennan/hexo_image/master/tomcat_managerApp_01.png" alt="我是图片">   </li>
+</ul>
+<ul>
+<li><p>第一步访问<a href="http://localhost:8080/，点击managerApp" target="_blank" rel="noopener">http://localhost:8080/，点击managerApp</a></p>
+</li>
+<li><p>第二步输入用户名密码。用户名密码需要在 conf/tomcat-users.xml 中设置，添加以下代码即可。</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;role rolename=&quot;manager-gui&quot;/&gt;</span><br><span class="line">&lt;user username=&quot;tomcat&quot; password=&quot;s3cret&quot; roles=&quot;manager-gui&quot;/&gt;</span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/fuzhennan/hexo_image/master/tomcat_managerApp_02.png" alt="我是图片">  </p>
+<ul>
+<li>其中不要修改</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;role rolename=&quot;manager-gui&quot;/&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>只需要修改username和password即可。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;user username=&quot;tomcat&quot; password=&quot;s3cret&quot; roles=&quot;manager-gui&quot;/&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>最后重启tomcat，登录，即可看到当前localhost下所有的应用内容。<br><img src="https://raw.githubusercontent.com/fuzhennan/hexo_image/master/tomcat_managerApp_03.png" alt="我是图片">  </li>
 </ul>
 <h2 id="相关文章"><a href="#相关文章" class="headerlink" title="相关文章"></a>相关文章</h2><ol>
 <li><a href="https://www.bilibili.com/video/av14548279" target="_blank" rel="noopener">bilibili某视频教程</a></li>
@@ -700,7 +728,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共4.6k字</span>
+  <span class="post-count">博客全站共4.8k字</span>
 </div>
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
