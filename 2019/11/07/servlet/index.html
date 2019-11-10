@@ -87,7 +87,8 @@
 <meta property="og:description" content="servlet学习笔记servlet介绍 概念： servlet, server+applet的缩写，从字面上的意思去理解就是服务器和小程序，javaee api给的解释是这样子的     A servlet is a small Java program that runs within a Web server.    即，servlet是一个运行在web服务器上的java小程序。javaee">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12947566-273fd4a1ffa96a59.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2019-11-09T16:08:22.731Z">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12947566-6c38e3f9264c77b8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2019-11-10T03:50:26.208Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="servlet学习笔记">
 <meta name="twitter:description" content="servlet学习笔记servlet介绍 概念： servlet, server+applet的缩写，从字面上的意思去理解就是服务器和小程序，javaee api给的解释是这样子的     A servlet is a small Java program that runs within a Web server.    即，servlet是一个运行在web服务器上的java小程序。javaee">
@@ -305,7 +306,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2k
+                  1.9k
                 </span>
               
 
@@ -321,7 +322,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  9
+                  8
                 </span>
               
             </div>
@@ -370,7 +371,157 @@
 <p>The servlet is taken out of service, then destroyed with the destroy method, then garbage collected and finalized.   </p>
 </blockquote>
 <h3 id="四个步骤"><a href="#四个步骤" class="headerlink" title="四个步骤"></a>四个步骤</h3><h4 id="创建一个JavaEE项目"><a href="#创建一个JavaEE项目" class="headerlink" title="创建一个JavaEE项目"></a>创建一个JavaEE项目</h4><h4 id="定义一个Java类，并且实现servlet接口"><a href="#定义一个Java类，并且实现servlet接口" class="headerlink" title="定义一个Java类，并且实现servlet接口"></a>定义一个Java类，并且实现servlet接口</h4><pre><code>`public class ServletDemo1 implements Servlet`  
-</code></pre><h4 id="实现servlet接口中的所有抽象方法"><a href="#实现servlet接口中的所有抽象方法" class="headerlink" title="实现servlet接口中的所有抽象方法"></a>实现servlet接口中的所有抽象方法</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br></pre></td><td class="code"><pre><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">(ServletConfig servletConfig)</span> <span class="keyword">throws</span> ServletException </span>&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> ServletConfig <span class="title">getServletConfig</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="comment">//提供服务的方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">service</span><span class="params">(ServletRequest servletRequest, ServletResponse servletResponse)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"hello servlet"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getServletInfo</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">destroy</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    &#125;  </span><br><span class="line">```  </span><br><span class="line">     		</span><br><span class="line">#### 配置servlet </span><br><span class="line"></span><br><span class="line">``` 	</span><br><span class="line">	&lt;servlet&gt;</span><br><span class="line">        &lt;servlet-name&gt;demo1&lt;/servlet-name&gt;</span><br><span class="line">        &lt;servlet-<span class="class"><span class="keyword">class</span>&gt;<span class="title">cn</span>.<span class="title">tomcat</span>.<span class="title">fuzhennan</span>.<span class="title">ServletDemo1</span>&lt;/<span class="title">servlet</span>-<span class="title">class</span>&gt;</span></span><br><span class="line"><span class="class">    &lt;/<span class="title">servlet</span>&gt;</span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">    &lt;<span class="title">servlet</span>-<span class="title">mapping</span>&gt;</span></span><br><span class="line"><span class="class">        &lt;<span class="title">servlet</span>-<span class="title">name</span>&gt;<span class="title">demo1</span>&lt;/<span class="title">servlet</span>-<span class="title">name</span>&gt;</span></span><br><span class="line"><span class="class">        &lt;<span class="title">url</span>-<span class="title">pattern</span>&gt;/<span class="title">demo1</span>&lt;/<span class="title">url</span>-<span class="title">pattern</span>&gt;</span></span><br><span class="line"><span class="class">    &lt;/<span class="title">servlet</span>-<span class="title">mapping</span>&gt;  </span></span><br><span class="line"><span class="class">```  </span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">## <span class="title">servlet</span>执行原理  </span></span><br><span class="line"><span class="class"></span></span><br><span class="line">+ 当用户在浏览器地址栏输入某个url路径后(我们这里用http://localhost:8080/demo1来讲解)，首先会去解析web.xml文件  </span><br><span class="line">	</span><br><span class="line">+ 然后在web.xml文件中找到&lt;url-pattern&gt;这个标签，看这个标签中是否含有/demo1这个路径  </span><br><span class="line">	</span><br><span class="line">+ 如果有的话找servlet名为demo1的&lt;servlet&gt;，找到&lt;servlet-<span class="class"><span class="keyword">class</span>&gt;中的内容，<span class="title">tomcat</span>将全类名对应的字节码文件加载进内存，即执行<span class="title">Class</span>.<span class="title">forName</span>()方法  </span></span><br><span class="line"><span class="class">	</span></span><br><span class="line"><span class="class">+ 创建对象 <span class="title">cls</span>.<span class="title">newInstance</span>()</span>;  </span><br><span class="line">	</span><br><span class="line">+ 调用方法servlet中的方法  </span><br><span class="line">	</span><br><span class="line">	![servlet_run.png](https:<span class="comment">//upload-images.jianshu.io/upload_images/12947566-6c38e3f9264c77b8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</span></span><br><span class="line"></span><br><span class="line">	</span><br><span class="line">## servlet的五个抽象方法</span><br><span class="line">+ **init()，servlet容器在实例化servlet后会执行该方法，初始化配置信息。这个方法只会执行一次。**  </span><br><span class="line">  </span><br><span class="line">&gt;<span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">(ServletConfig config)</span></span></span><br><span class="line"><span class="function">   	<span class="keyword">throws</span> ServletException</span></span><br><span class="line"><span class="function">	Called by the servlet container to indicate to a servlet that the servlet is being placed into service.</span></span><br><span class="line"><span class="function">	The servlet container calls the init method exactly once after instantiating the servlet. The init method must complete successfully before the servlet can receive any requests.</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">&gt;The servlet container cannot place the servlet into service <span class="keyword">if</span> the init method</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">&gt; Throws a ServletException</span></span><br><span class="line"><span class="function">Does not return within a time period defined by the Web server    </span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">+ **<span class="title">ServletConfig</span><span class="params">()</span>，这个方法会返回一个ServletConfig对象，包括初始化的和startup的参数。** </span></span><br><span class="line"><span class="function"> </span></span><br><span class="line"><span class="function">&gt; ServletConfig <span class="title">getServletConfig</span><span class="params">()</span></span></span><br><span class="line"><span class="function">Returns a ServletConfig object, which contains initialization and startup parameters <span class="keyword">for</span> <span class="keyword">this</span> servlet. The ServletConfig object returned is the one passed to the init method.</span></span><br><span class="line"><span class="function">&gt; Implementations of <span class="keyword">this</span> interface are responsible <span class="keyword">for</span> storing the ServletConfig object so that <span class="keyword">this</span> method can return it. The GenericServlet class, which implements <span class="keyword">this</span> interface, already does <span class="keyword">this</span>.  </span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">+ **<span class="title">service</span><span class="params">()</span>，该方法的功能是servlet容器允许servlet响应请求，提供服务。注意，只有<span class="title">init</span><span class="params">()</span>成功的执行后该方法才会执行。**  </span></span><br><span class="line"><span class="function">  </span></span><br><span class="line"><span class="function">&gt;Called by the servlet container to allow the servlet to respond to a request.</span></span><br><span class="line"><span class="function">This method is only called after the servlet's <span class="title">init</span><span class="params">()</span> method has completed successfully.</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">&gt;The status code of the response always should be set <span class="keyword">for</span> a servlet that <span class="keyword">throws</span> or sends an error.</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">&gt;Servlets typically run inside multithreaded servlet containers that can handle multiple requests concurrently. Developers must be aware to synchronize access to any shared resources such as files, network connections, and as well as the servlet's class and instance variables. More information on multithreaded programming in Java is available in the Java tutorial on multi-threaded programming.  </span></span><br><span class="line"><span class="function">	</span></span><br><span class="line"><span class="function">+ **<span class="title">getServletInfo</span><span class="params">()</span>，这个方法会返回servlet的一些信息，包括作者，版本，版权等。**  </span></span><br><span class="line"><span class="function">	</span></span><br><span class="line"><span class="function">&gt; Returns information about the servlet, such as author, version, and copyright.</span></span><br><span class="line"><span class="function">The string that <span class="keyword">this</span> method returns should be plain text and not markup of any <span class="title">kind</span> <span class="params">(such as HTML, XML, etc.)</span>.  </span></span><br><span class="line"><span class="function">	</span></span><br><span class="line"><span class="function">+ **<span class="title">destroy</span><span class="params">()</span>，当servlet中的<span class="title">service</span><span class="params">()</span>方法退出时，该方法就会执行，且只执行一次。当执行了该方法后，这个servlet实现的类便不会再执行<span class="title">service</span><span class="params">()</span>方法。该方法可以释放任何资源。** </span></span><br><span class="line"><span class="function">	</span></span><br><span class="line"><span class="function">&gt;Called by the servlet container to indicate to a servlet that the servlet is being taken out of service. This method is only called once all threads within the servlet's service method have exited or after a timeout period has passed. After the servlet container calls <span class="keyword">this</span> method, it will not call the service method again on <span class="keyword">this</span> servlet.   </span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">&gt; This method gives the servlet an opportunity to clean up any resources that are being <span class="title">held</span> <span class="params">(<span class="keyword">for</span> example, memory, file handles, threads)</span> and make sure that any persistent state is <span class="keyword">synchronized</span> with the servlet's current state in memory.   </span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">## servlet的生命周期</span></span><br><span class="line"><span class="function">### 被创建</span></span><br><span class="line"><span class="function">+ 执行<span class="title">init</span><span class="params">()</span>方法，只执行一次  </span></span><br><span class="line"><span class="function">	- servlet的创建   </span></span><br><span class="line"><span class="function">		- 默认情况下，当第一次被访问时，servlet会被创建   </span></span><br><span class="line"><span class="function">			  </span></span><br><span class="line"><span class="function">		- 可以通过配置去指定servlet的创建时机  </span></span><br><span class="line"><span class="function">			  </span></span><br><span class="line"><span class="function">&gt; 指定servlet的创建时机  </span></span><br><span class="line"><span class="function">&gt; 1.默认情况下，第一次被访问时创建</span></span><br><span class="line"><span class="function">        即&lt;load-on-startup&gt;值为负整数，默认值为-1</span></span><br><span class="line"><span class="function">  2.在tomcat服务器启动时就创建</span></span><br><span class="line"><span class="function">        即&lt;load-on-startup&gt;值为&gt;</span>=<span class="number">0</span>的整数，从<span class="number">0</span>开始的整数中，越往后优先级越低，<span class="number">0</span>的优先级最高   </span><br><span class="line"> </span><br><span class="line">  </span><br><span class="line">- servlet中的init()方法只执行一次，说明一个servlet在内存中只存在一个对象，即单例模式。  </span><br><span class="line">			  </span><br><span class="line">	- 当用户同时访问共享资源时，对资源进行增删改查 ，可能会存在线程安全问题。  </span><br><span class="line">				   </span><br><span class="line">	- 解决方法：尽量不要在servlet中定义成员变量。非要定义的话不要赋值，修改。  </span><br><span class="line">  </span><br><span class="line">	</span><br><span class="line">### 提供服务</span><br><span class="line">+ 执行service()方法，可执行多次  </span><br><span class="line">	</span><br><span class="line">### 被销毁 </span><br><span class="line">+ 执行destroy()方法，只执行一次  </span><br><span class="line">	- 服务器正常关闭时 ，执行该方法，释放资源，servlet被销毁。  </span><br><span class="line">		  </span><br><span class="line">## servlet3.0后的注解配置  </span><br><span class="line">&gt; servlet3.0之后，用户不需要手动配置web.xml文件，可以通过注解的方式去配置。</span><br><span class="line"></span><br><span class="line">+ 实现步骤  </span><br><span class="line">  </span><br><span class="line">	- 首先创建一个Javaee项目，选择servlet版本为<span class="number">3.0</span>及以上，不需要勾选web.xml  </span><br><span class="line">	</span><br><span class="line">	- 第二步，在src目录下创建一个Java类实现servlet接口  </span><br><span class="line">	 </span><br><span class="line">	- 然后重写servlet的所有抽象方法  </span><br><span class="line">	</span><br><span class="line">	- 在类上通过<span class="meta">@WebServlet</span>()实现注解配置  </span><br><span class="line">+ <span class="meta">@WebServlet</span>()源码  </span><br><span class="line"></span><br><span class="line">	```java  </span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> WebServlet &#123;</span><br><span class="line">    <span class="function">String <span class="title">name</span><span class="params">()</span> <span class="keyword">default</span> ""</span>;</span><br><span class="line"></span><br><span class="line">    String[] value() <span class="keyword">default</span> &#123;&#125;;</span><br><span class="line"></span><br><span class="line">    String[] urlPatterns() <span class="keyword">default</span> &#123;&#125;;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">loadOnStartup</span><span class="params">()</span> <span class="keyword">default</span> -1</span>;</span><br><span class="line"></span><br><span class="line">    WebInitParam[] initParams() <span class="keyword">default</span> &#123;&#125;;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">asyncSupported</span><span class="params">()</span> <span class="keyword">default</span> <span class="keyword">false</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="function">String <span class="title">smallIcon</span><span class="params">()</span> <span class="keyword">default</span> ""</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function">String <span class="title">largeIcon</span><span class="params">()</span> <span class="keyword">default</span> ""</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function">String <span class="title">description</span><span class="params">()</span> <span class="keyword">default</span> ""</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function">String <span class="title">displayName</span><span class="params">()</span> <span class="keyword">default</span> ""</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><h4 id="实现servlet接口中的所有抽象方法"><a href="#实现servlet接口中的所有抽象方法" class="headerlink" title="实现servlet接口中的所有抽象方法"></a>实现servlet接口中的所有抽象方法</h4><pre><code>    
+    public void init(ServletConfig servletConfig) throws ServletException {
+
+    }
+
+    @Override
+    public ServletConfig getServletConfig() {
+        return null;
+    }
+
+    @Override
+    //提供服务的方法
+    public void service(ServletRequest servletRequest, ServletResponse servletResponse) throws ServletException, IOException {
+        System.out.println("hello servlet");
+    }
+
+    @Override
+    public String getServletInfo() {
+        return null;
+    }
+
+    @Override
+    public void destroy() {
+
+    }
+</code></pre> 
+
+<h4 id="配置servlet"><a href="#配置servlet" class="headerlink" title="配置servlet"></a>配置servlet</h4><blockquote>
+<pre><code>&lt;servlet&gt;
+    &lt;servlet-name&gt;demo1&lt;/servlet-name&gt;
+    &lt;servlet-class&gt;cn.tomcat.fuzhennan.ServletDemo1&lt;/servlet-class&gt;
+&lt;/servlet&gt;
+</code></pre></blockquote>
+<pre><code>&lt;servlet-mapping&gt;
+    &lt;servlet-name&gt;demo1&lt;/servlet-name&gt;
+    &lt;url-pattern&gt;/demo1&lt;/url-pattern&gt;
+&lt;/servlet-mapping&gt;   
+</code></pre><h2 id="servlet执行原理"><a href="#servlet执行原理" class="headerlink" title="servlet执行原理"></a>servlet执行原理</h2><ul>
+<li><p>当用户在浏览器地址栏输入某个url路径后(我们这里用<a href="http://localhost:8080/demo1来讲解)，首先会去解析web.xml文件" target="_blank" rel="noopener">http://localhost:8080/demo1来讲解)，首先会去解析web.xml文件</a>  </p>
+</li>
+<li><p>然后在web.xml文件中找到<url-pattern>这个标签，看这个标签中是否含有/demo1这个路径  </url-pattern></p>
+</li>
+<li><p>如果有的话找servlet名为demo1的<servlet>，找到<servlet-class>中的内容，tomcat将全类名对应的字节码文件加载进内存，即执行Class.forName()方法  </servlet-class></servlet></p>
+</li>
+<li><p>创建对象 cls.newInstance();  </p>
+</li>
+<li><p>调用方法servlet中的方法  </p>
+<p>  <img src="https://upload-images.jianshu.io/upload_images/12947566-6c38e3f9264c77b8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="servlet_run.png"></p>
+</li>
+</ul>
+<h2 id="servlet的五个抽象方法"><a href="#servlet的五个抽象方法" class="headerlink" title="servlet的五个抽象方法"></a>servlet的五个抽象方法</h2><ul>
+<li><strong>init()，servlet容器在实例化servlet后会执行该方法，初始化配置信息。这个方法只会执行一次。</strong>  </li>
+</ul>
+<blockquote>
+<p>void init(ServletConfig config)<br>       throws ServletException<br>    Called by the servlet container to indicate to a servlet that the servlet is being placed into service.<br>    The servlet container calls the init method exactly once after instantiating the servlet. The init method must complete successfully before the servlet can receive any requests.</p>
+</blockquote>
+<blockquote>
+<p>The servlet container cannot place the servlet into service if the init method</p>
+</blockquote>
+<blockquote>
+<p>Throws a ServletException<br>Does not return within a time period defined by the Web server    </p>
+</blockquote>
+<ul>
+<li><strong>ServletConfig()，这个方法会返回一个ServletConfig对象，包括初始化的和startup的参数。</strong> </li>
+</ul>
+<blockquote>
+<p>ServletConfig getServletConfig()<br>Returns a ServletConfig object, which contains initialization and startup parameters for this servlet. The ServletConfig object returned is the one passed to the init method.<br>Implementations of this interface are responsible for storing the ServletConfig object so that this method can return it. The GenericServlet class, which implements this interface, already does this.  </p>
+</blockquote>
+<ul>
+<li><strong>service()，该方法的功能是servlet容器允许servlet响应请求，提供服务。注意，只有init()成功的执行后该方法才会执行。</strong>  </li>
+</ul>
+<blockquote>
+<p>Called by the servlet container to allow the servlet to respond to a request.<br>This method is only called after the servlet’s init() method has completed successfully.</p>
+</blockquote>
+<blockquote>
+<p>The status code of the response always should be set for a servlet that throws or sends an error.</p>
+</blockquote>
+<blockquote>
+<p>Servlets typically run inside multithreaded servlet containers that can handle multiple requests concurrently. Developers must be aware to synchronize access to any shared resources such as files, network connections, and as well as the servlet’s class and instance variables. More information on multithreaded programming in Java is available in the Java tutorial on multi-threaded programming.  </p>
+</blockquote>
+<ul>
+<li><strong>getServletInfo()，这个方法会返回servlet的一些信息，包括作者，版本，版权等。</strong>  </li>
+</ul>
+<blockquote>
+<p>Returns information about the servlet, such as author, version, and copyright.<br>The string that this method returns should be plain text and not markup of any kind (such as HTML, XML, etc.).  </p>
+</blockquote>
+<ul>
+<li><strong>destroy()，当servlet中的service()方法退出时，该方法就会执行，且只执行一次。当执行了该方法后，这个servlet实现的类便不会再执行service()方法。该方法可以释放任何资源。</strong> </li>
+</ul>
+<blockquote>
+<p>Called by the servlet container to indicate to a servlet that the servlet is being taken out of service. This method is only called once all threads within the servlet’s service method have exited or after a timeout period has passed. After the servlet container calls this method, it will not call the service method again on this servlet.   </p>
+</blockquote>
+<blockquote>
+<p>This method gives the servlet an opportunity to clean up any resources that are being held (for example, memory, file handles, threads) and make sure that any persistent state is synchronized with the servlet’s current state in memory.   </p>
+</blockquote>
+<h2 id="servlet的生命周期"><a href="#servlet的生命周期" class="headerlink" title="servlet的生命周期"></a>servlet的生命周期</h2><h3 id="被创建"><a href="#被创建" class="headerlink" title="被创建"></a>被创建</h3><ul>
+<li><p>执行init()方法，只执行一次  </p>
+<ul>
+<li><p>servlet的创建   </p>
+<ul>
+<li><p>默认情况下，当第一次被访问时，servlet会被创建   </p>
+</li>
+<li><p>可以通过配置去指定servlet的创建时机  </p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>指定servlet的创建时机<br>1.默认情况下，第一次被访问时创建<br>        即<load-on-startup>值为负整数，默认值为-1<br>  2.在tomcat服务器启动时就创建<br>        即<load-on-startup>值为&gt;=0的整数，从0开始的整数中，越往后优先级越低，0的优先级最高   </load-on-startup></load-on-startup></p>
+</blockquote>
+<ul>
+<li><p>servlet中的init()方法只执行一次，说明一个servlet在内存中只存在一个对象，即单例模式。  </p>
+<ul>
+<li><p>当用户同时访问共享资源时，对资源进行增删改查 ，可能会存在线程安全问题。  </p>
+</li>
+<li><p>解决方法：尽量不要在servlet中定义成员变量。非要定义的话不要赋值，修改。  </p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="提供服务"><a href="#提供服务" class="headerlink" title="提供服务"></a>提供服务</h3><ul>
+<li>执行service()方法，可执行多次  </li>
+</ul>
+<h3 id="被销毁"><a href="#被销毁" class="headerlink" title="被销毁"></a>被销毁</h3><ul>
+<li>执行destroy()方法，只执行一次  <ul>
+<li>服务器正常关闭时 ，执行该方法，释放资源，servlet被销毁。  </li>
+</ul>
+</li>
+</ul>
+<h2 id="servlet3-0后的注解配置"><a href="#servlet3-0后的注解配置" class="headerlink" title="servlet3.0后的注解配置"></a>servlet3.0后的注解配置</h2><blockquote>
+<p>servlet3.0之后，用户不需要手动配置web.xml文件，可以通过注解的方式去配置。</p>
+</blockquote>
+<ul>
+<li><p>实现步骤  </p>
+<ul>
+<li><p>首先创建一个Javaee项目，选择servlet版本为3.0及以上，不需要勾选web.xml  </p>
+</li>
+<li><p>第二步，在src目录下创建一个Java类实现servlet接口  </p>
+</li>
+<li><p>然后重写servlet的所有抽象方法  </p>
+</li>
+<li><p>在类上通过@WebServlet()实现注解配置  </p>
+</li>
+</ul>
+</li>
+<li><p>@WebServlet()源码  </p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> WebServlet &#123;</span><br><span class="line">    <span class="function">String <span class="title">name</span><span class="params">()</span> <span class="keyword">default</span> ""</span>;</span><br><span class="line"></span><br><span class="line">    String[] value() <span class="keyword">default</span> &#123;&#125;;</span><br><span class="line"></span><br><span class="line">    String[] urlPatterns() <span class="keyword">default</span> &#123;&#125;;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">loadOnStartup</span><span class="params">()</span> <span class="keyword">default</span> -1</span>;</span><br><span class="line"></span><br><span class="line">    WebInitParam[] initParams() <span class="keyword">default</span> &#123;&#125;;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">asyncSupported</span><span class="params">()</span> <span class="keyword">default</span> <span class="keyword">false</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="function">String <span class="title">smallIcon</span><span class="params">()</span> <span class="keyword">default</span> ""</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function">String <span class="title">largeIcon</span><span class="params">()</span> <span class="keyword">default</span> ""</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function">String <span class="title">description</span><span class="params">()</span> <span class="keyword">default</span> ""</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function">String <span class="title">displayName</span><span class="params">()</span> <span class="keyword">default</span> ""</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 <ul>
 <li><p>通过WebServlet接口我们可以看出，他底层自动帮我们初始化了这些参数，我们只需要添加自己的内容即可。  </p>
 </li>
@@ -603,7 +754,7 @@ HttpServlet
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#servlet学习笔记"><span class="nav-number">1.</span> <span class="nav-text">servlet学习笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#servlet介绍"><span class="nav-number">1.1.</span> <span class="nav-text">servlet介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#入门"><span class="nav-number">1.2.</span> <span class="nav-text">入门</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#四个步骤"><span class="nav-number">1.2.1.</span> <span class="nav-text">四个步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#创建一个JavaEE项目"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">创建一个JavaEE项目</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#定义一个Java类，并且实现servlet接口"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">定义一个Java类，并且实现servlet接口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实现servlet接口中的所有抽象方法"><span class="nav-number">1.2.1.3.</span> <span class="nav-text">实现servlet接口中的所有抽象方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#servlet体系结构"><span class="nav-number">1.2.2.</span> <span class="nav-text">servlet体系结构</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#servlet学习笔记"><span class="nav-number">1.</span> <span class="nav-text">servlet学习笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#servlet介绍"><span class="nav-number">1.1.</span> <span class="nav-text">servlet介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#入门"><span class="nav-number">1.2.</span> <span class="nav-text">入门</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#四个步骤"><span class="nav-number">1.2.1.</span> <span class="nav-text">四个步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#创建一个JavaEE项目"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">创建一个JavaEE项目</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#定义一个Java类，并且实现servlet接口"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">定义一个Java类，并且实现servlet接口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实现servlet接口中的所有抽象方法"><span class="nav-number">1.2.1.3.</span> <span class="nav-text">实现servlet接口中的所有抽象方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置servlet"><span class="nav-number">1.2.1.4.</span> <span class="nav-text">配置servlet</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#servlet执行原理"><span class="nav-number">1.3.</span> <span class="nav-text">servlet执行原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#servlet的五个抽象方法"><span class="nav-number">1.4.</span> <span class="nav-text">servlet的五个抽象方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#servlet的生命周期"><span class="nav-number">1.5.</span> <span class="nav-text">servlet的生命周期</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#被创建"><span class="nav-number">1.5.1.</span> <span class="nav-text">被创建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提供服务"><span class="nav-number">1.5.2.</span> <span class="nav-text">提供服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#被销毁"><span class="nav-number">1.5.3.</span> <span class="nav-text">被销毁</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#servlet3-0后的注解配置"><span class="nav-number">1.6.</span> <span class="nav-text">servlet3.0后的注解配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#servlet体系结构"><span class="nav-number">1.6.1.</span> <span class="nav-text">servlet体系结构</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
